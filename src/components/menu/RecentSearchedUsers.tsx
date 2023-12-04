@@ -1,13 +1,14 @@
-import { useContext, useEffect, useState } from 'react';
 
+import { useContext, useEffect, useState } from 'react';
 import { UserDataContext } from '../context/UserContext';
 import { Card } from '../card/Card';
+import { users } from '../../models/Users';
+
 import {
   StyledMenuSearchedUsers,
   StyledMenuSearchedUsersContentTitle,
   StyledMenuSearchedUsersContent
 } from './RecentSearchedUsers.styled';
-import { users } from '../../models/Users';
 
 export const Menu = () => {
   const { searchedUsers, setSearchedUsers, openRecentSearchedUsers } = useContext(UserDataContext);
