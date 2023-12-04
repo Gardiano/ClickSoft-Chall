@@ -26,7 +26,7 @@ export const SearchBar = () => {
     const debounce = setTimeout(() => {
       // get na api
       getUserData(value);
-    }, 1500);
+    }, 2000);
     // atualiza o atraso para um novo character digitado.
     setTimer(debounce);
   };
