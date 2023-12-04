@@ -1,14 +1,30 @@
-
-import { StyledHome } from './Home.styled';
-import { SearchBar } from "../../components/Search/Search";
+import { useContext } from 'react'
+import { SearchBar } from "../../components/search/Search";
 import { Card } from '../../components/card/Card';
+import { UserDataContext } from '../../components/context/UserContext';
+import { Menu } from '../../components/menu/RecentSearchedUsers';
+import {
+  StyledHome,
+  StyledHomeTitle,
+} from './Home.styled';
 
 export const Home = () => {
+  const { openMenu, data } = useContext(UserDataContext);
   return (
-    <StyledHome>
-      <h1>Procure pelo seu usuário favorito.</h1>
-      <SearchBar />
-      <Card />
-    </StyledHome>
+    <>
+      <StyledHome>
+        <StyledHomeTitle>Procure pelo seu usuário favorito.</StyledHomeTitle>
+        <SearchBar />
+        <Card
+          data={data}
+          key={data?.id}
+          avatar_url={data?.avatar_url}
+          location={data?.location}
+          login={data?.login}
+          name={data?.name}
+        />
+      </StyledHome>
+      {openMenu ? <Menu /> : null}
+    </>
   );
 };

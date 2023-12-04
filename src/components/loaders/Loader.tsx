@@ -8,6 +8,17 @@ const StyledLoader = styled.img`
   border-radius: 50px;
 `
 
-export const Loader = () => {
-  return <StyledLoader src={loader_gif} />
+const StyledLoaderMessage = styled.h2`
+  width: 72%;
+  text-align: center;
+  font-size: 18px;
+`
+
+export const Loader = ( ) => {
+  return (
+    <>
+      <StyledLoaderMessage>Procure um usuário na barra de pesquisas...</StyledLoaderMessage>
+      <StyledLoader src={loader_gif} />
+    </>
+  )
 }

@@ -19,3 +19,28 @@ font-size: 42px;
 margin-right: 8px;
 }
 `
+
+export const StyledHeaderContent = styled.div`
+width: 100%;
+max-width: 900px;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0 20px 0 20px;
+justify-content: space-between;
+button {
+width: 34px;
+height: 34px;
+border: 0;
+display: flex;
+align-items: center;
+border-radius: 4px;
+cursor: pointer;
+justify-content: center;
+box-shadow: 5px 2px 5px #d9d9d9, 0px 0px 5px #ffffff;
+svg {
+  font-size: 16px;
+  margin: 0;
+}
+}
+`

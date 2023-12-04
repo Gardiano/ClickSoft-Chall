@@ -57,9 +57,7 @@ export const Card = ({ login, name, location, avatar_url, data }: users) => {
           <Toast />
         </>
         :
-        <>
-          <Loader message=" Procure um usuário utilizando a barra de pesquisa..." />
-        </>
+        <> <Loader/> </>
       }
     </>
   )
