@@ -18,8 +18,8 @@ width: 100%;
 gap: 10px 0;
 height: auto;
 display: flex;
-align-items: center;
-padding: 18px 0 0 0;
+align-items: flex-end;
+padding: 12px 0 0 0;
 flex-direction: column;
 justify-content: center;
 `

@@ -11,6 +11,7 @@ import {
 } from "react-icons/md";
 import { FaRegCalendarCheck } from "react-icons/fa";
 import { IoGitBranch } from "react-icons/io5";
+import { Loader } from "../loaders/Loader";
 
 import {
   StyledRepos,
@@ -20,7 +21,6 @@ import {
   StyledReposDataTitle,
   StyledReposTitle
 } from "./Repositories.styled";
-import { Loader } from "../loaders/Loader";
 
 export const Repositories = () => {
   const params = useParams();

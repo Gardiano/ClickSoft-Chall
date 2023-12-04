@@ -28,6 +28,10 @@ O <em>HUBusca</em> é um aplicativo web construído com <b>React</b>, <b>TypeScr
 2. Instale as dependências: <code>npm install</code>
 3. Inicie o aplicativo: <code>npm start</code>
 
+## Deploy
+
+- <b> https://cschall.vercel.app/ </b>
+
 ## Configuração
 
 - O aplicativo utiliza o <b>Moment.js</b> para formatação de datas.
