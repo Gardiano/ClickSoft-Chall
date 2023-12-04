@@ -1,15 +1,15 @@
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledCardContainer = styled.section`
 display: flex;
 flex-wrap: wrap;
 border-radius: 4px;
+margin-bottom: 30px;
 flex-direction: row;
 align-items: center;
 width:calc(100% - 40px);
 justify-content: center;
-margin-bottom: 30px;
 `
 
 export const StyledCardContent = styled.div`
@@ -34,6 +34,7 @@ justify-content: center;
 border-top-left-radius: 8px;
 border-top-right-radius: 8px;
 `
+
 export const StyledGitHubBadge = styled.span`
 width: 100%;
 display: flex;
@@ -74,8 +75,8 @@ svg {
 `
 
 export const StyledCardName = styled.strong`
-color: #777777;
 display: flex;
+color: #777777;
 font-size: 18px;
 align-items: center;
 svg {
@@ -84,10 +85,29 @@ svg {
 `
 export const StyledCardLocation = styled.p`
 margin: 0;
-color: #777777;
 display: flex;
+color: #777777;
 align-items: center;
 svg {
   margin-right: 4px;
 }
 `
+
+const StyledCardMedia = css`
+  @media screen and (max-width: 500px) {
+    ${StyledCardContent} {
+    width: 100%;
+    }
+    ${StyledCardImage} {
+      width: 105px;
+      height: 105px;
+    }
+    ${StyledCardName} {
+    font-size: 16px;
+    }
+  }
+`;
+
+export const StyledCard = styled(StyledCardContainer)`
+  ${StyledCardMedia}
+`;
