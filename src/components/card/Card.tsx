@@ -21,6 +21,7 @@ import {
 import { users } from "../../models/Users";
 import { Toast } from "../../helpers/toastContainer";
 
+// component reutilizavel
 export const Card = ({ login, name, location, avatar_url, data }: users) => {
   return (
     <>
@@ -57,7 +58,9 @@ export const Card = ({ login, name, location, avatar_url, data }: users) => {
           <Toast />
         </>
         :
-        <> <Loader/> </>
+        <> 
+          <Loader message="Procure um usuário na barra de pesquisas..." /> 
+        </>
       }
     </>
   )
