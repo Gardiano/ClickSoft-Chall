@@ -1,11 +1,15 @@
 
 import { useState, useContext } from "react";
 import { api } from "../../services/axios";
-import { StyledSearchBarContainer } from "./Search.styled";
+
 import { IoSearchSharp } from "react-icons/io5";
 import { UserDataContext } from "../context/UserContext";
 import { users } from "../../models/Users";
 import { errorToast, successToast } from "../../helpers/toasts";
+import { 
+  StyledSearchBarContainer, 
+  StyledSearchBarInput 
+} from "./Search.styled";
 
 export const SearchBar = () => {
   const { setData, setSearchedUsers } = useContext(UserDataContext);
@@ -37,7 +41,7 @@ export const SearchBar = () => {
       errorToast();
       return error;
     }
-  }
+  };
 
   const addSearchedUser = (user: users) => {
     if (user !== null) {
@@ -59,11 +63,11 @@ export const SearchBar = () => {
 
   return (
     <StyledSearchBarContainer>
-      <input
-        autoFocus
-        value={inputValue}
-        onChange={handleChange}
-        placeholder="  Exemplo: Linus Torvalds"
+      <StyledSearchBarInput
+      autoFocus
+      value={inputValue}
+      onChange={handleChange}
+      placeholder=" Procurar..."
       />
       <button> <IoSearchSharp /> </button>
     </StyledSearchBarContainer>
