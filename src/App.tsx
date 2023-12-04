@@ -1,15 +1,16 @@
 
-import { AppRoutes } from './Routes'
-import { Header } from './components/Header/Header';
+
+import { AppRoutes } from './Routes';
+import { Header } from './components/header/Header';
 import { UserDataProvider } from './components/context/UserContext';
 
-function App() {
+const App = () => {
   return (
     <>
-    <Header/>
-    <UserDataProvider>
-      <AppRoutes />
-    </UserDataProvider>
+      <UserDataProvider>
+        <Header/>
+        <AppRoutes />
+      </UserDataProvider>
     </>
   );
 }
