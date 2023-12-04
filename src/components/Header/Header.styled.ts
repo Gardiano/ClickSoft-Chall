@@ -15,12 +15,6 @@ svg {
 }
 `
 
-export const StyledHeaderSvg = styled.svg`
-font-size: 42px;
-margin-right: 8px;
-color: red;
-`
-
 export const StyledHeaderContent = styled.div`
 width: 100%;
 max-width: 900px;
