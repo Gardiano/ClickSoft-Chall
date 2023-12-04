@@ -20,6 +20,7 @@ import {
   StyledReposDataTitle,
   StyledReposTitle
 } from "./Repositories.styled";
+import { Loader } from "../loaders/Loader";
 
 export const Repositories = () => {
   const params = useParams();
@@ -27,20 +28,19 @@ export const Repositories = () => {
 
   useEffect(() => {
     getRepos();
-  }, []);
+  }, [params.id]);
 
   // get data
   const getRepos = async () => {
     try {
       const response = await api.get(`/${params.id}/repos`);
       setRepos(response.data);
-      console.log(response.data)
-    } catch (error: any) {
+    } catch (error) {
       return error;
     }
   }
 
-  // data formatada
+  // format data
   function formatDateToPtBR(dataString: string) {
     return moment(dataString).format('DD/MM/YYYY HH:mm:ss');
   }
@@ -51,38 +51,45 @@ export const Repositories = () => {
         {repos.length ? <> Repositórios {`(${(repos.length)})`} </> : <> Repositórios (0) </>}
       </StyledReposTitle>
       <StyledReposContent>
-        {repos.map((repo: repos) => {
-          return (
-            <Link to={`${repo.svn_url}`} target='_blank' key={repo.id}>
-              <StyledReposData>
-                <StyledReposDataTitle>
-                  <MdOutlineSubtitles />
-                  {repo.name || 'N/A'}
-                </StyledReposDataTitle>
+        <>{repos?.length > 0 ? (
+          <>
+            {repos?.map((repo: repos) => {
+              return (
+                <Link to={`${repo.svn_url}`} target='_blank' key={repo.id}>
+                  <StyledReposData>
+                    <StyledReposDataTitle>
+                      <MdOutlineSubtitles />
+                      {repo.name || 'N/A'}
+                    </StyledReposDataTitle>
 
-                <StyledReposDataItens>
-                  <MdOutlineDescription />
-                  {repo?.description || 'N/A'}
-                </StyledReposDataItens>
+                    <StyledReposDataItens>
+                      <MdOutlineDescription />
+                      {repo?.description || 'N/A'}
+                    </StyledReposDataItens>
 
-                <StyledReposDataItens>
-                  <MdDeveloperMode />
-                  {repo.language || 'N/A'}
-                </StyledReposDataItens>
+                    <StyledReposDataItens>
+                      <MdDeveloperMode />
+                      {repo.language || 'N/A'}
+                    </StyledReposDataItens>
 
-                <StyledReposDataItens>
-                  <FaRegCalendarCheck />
-                  {formatDateToPtBR(repo.created_at)}
-                </StyledReposDataItens>
+                    <StyledReposDataItens>
+                      <FaRegCalendarCheck />
+                      {formatDateToPtBR(repo.created_at)}
+                    </StyledReposDataItens>
 
-                <StyledReposDataItens>
-                  <IoGitBranch />
-                  {formatDateToPtBR(repo.pushed_at)}
-                </StyledReposDataItens>
-              </StyledReposData>
-            </Link>
-          )
-        })}
+                    <StyledReposDataItens>
+                      <IoGitBranch />
+                      {formatDateToPtBR(repo.pushed_at)}
+                    </StyledReposDataItens>
+                  </StyledReposData>
+                </Link>
+              )
+            })}
+          </>
+        ) : (
+          <Loader message="Não há repositórios no momento." />
+        )}
+        </>
       </StyledReposContent>
     </StyledRepos>
   )
