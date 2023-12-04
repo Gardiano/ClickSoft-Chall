@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- Mantenha o título, substitua "SeuNome" pelo seu nome de usuário no GitHub -->
+<h1 align="center">HUBusca</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>Um aplicativo web para buscar usuários no GitHub.</strong>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Visão Geral
 
-## Expanding the ESLint configuration
+O <em>HUBusca</em> é um aplicativo web construído com <b>React</b>, <b>TypeScript</b>, <b>Styled Components</b>, <b>Moment.js</b>, e <b>Axios</b>. Ele permite que os usuários pesquisem informações de outros usuários no GitHub digitando o nome de usuário. Além disso, o aplicativo mantém um histórico dos usuários pesquisados recentemente.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Funcionalidades
 
-- Configure the top-level `parserOptions` property like this:
+- **Busca de Usuário:** Digite o nome de um usuário do GitHub para obter informações detalhadas sobre ele.
+- **Histórico de Pesquisas:** Registro dos usuários pesquisados recentemente para facilitar o acesso rápido.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Tecnologias Utilizadas
+- <b>React:</b> Biblioteca JavaScript para construção de interfaces de usuário.
+- <b>TypeScript:</b> Superset do JavaScript que adiciona tipagem estática.
+- <b>Styled Components:</b> Biblioteca para estilizar componentes com CSS no JavaScript.
+- <b>Moment.js:</b> Biblioteca para manipulação de datas e horas.
+- <b>Axios:</b> Cliente HTTP para fazer chamadas de API.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Instalação
+
+1. Clone o repositório: <code>git clone https://github.com/Gardiano/ClickSoft-Chall.git</code>
+2. Instale as dependências: <code>npm install</code>
+3. Inicie o aplicativo: <code>npm start</code>
+
+## Configuração
+
+- O aplicativo utiliza o <b>Moment.js</b> para formatação de datas.
+- As chamadas à API do GitHub são feitas usando o <b>Axios</b>.
+
+## Licença
+
+Este projeto está licenciado sob a Licença <b>MIT</b> - veja o arquivo <a href="LICENSE.md">LICENSE.md</a> para mais detalhes.
