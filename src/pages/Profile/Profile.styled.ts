@@ -5,7 +5,7 @@ import { StyledCardImage } from "../../components/card/Card.styled";
 export const StyledProfileContainer = styled.main`
 height: 86vh;
 display: flex;
-max-width: 980px;
+max-width: 900px;
 margin: 0 auto;
 align-items: center;
 flex-direction: column;
