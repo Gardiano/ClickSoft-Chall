@@ -13,11 +13,15 @@ const StyledLoaderMessage = styled.h2`
   text-align: center;
   font-size: 18px;
 `
+interface LoaderProps {
+  message: string
+}
 
-export const Loader = ( ) => {
+// loader component
+export const Loader = ( {message}: LoaderProps ) => {
   return (
     <>
-      <StyledLoaderMessage>Procure um usuário na barra de pesquisas...</StyledLoaderMessage>
+      <StyledLoaderMessage>{message}</StyledLoaderMessage>
       <StyledLoader src={loader_gif} />
     </>
   )
