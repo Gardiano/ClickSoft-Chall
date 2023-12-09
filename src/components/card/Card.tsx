@@ -21,9 +21,9 @@ import {
 } from "./Card.styled";
 
 // component reutilizavel
-export const Card = ({ login, name, location, avatar_url, data }: users) => {
-  
-  if (!data) {
+export const Card = ({ login, name, location, avatar_url, has_data }: users) => {
+
+  if (!has_data) {
     return <Loader message="Procure um usuário na barra de pesquisas..." />;
   }
 
