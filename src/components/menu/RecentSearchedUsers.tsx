@@ -34,7 +34,7 @@ export const Menu = () => {
           {searchedUsers?.map((user: users) => (
             <Card
               key={user?.id}
-              data={searchedUsers}
+              has_data={searchedUsers}
               avatar_url={user.avatar_url}
               location={user.location}
               login={user.login}
