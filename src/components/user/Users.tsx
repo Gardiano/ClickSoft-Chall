@@ -8,6 +8,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaUserCheck } from "react-icons/fa";
 import { MdDeveloperMode } from "react-icons/md";
 import loader_gif from '../../assets/Github.gif';
+
 import {
   StyledCardName,
   StyledCardUserName,
