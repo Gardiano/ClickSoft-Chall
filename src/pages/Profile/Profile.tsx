@@ -23,7 +23,7 @@ export const Profile = () => {
           </StyledProfileBox>
         </StyledProfileContent>
       </StyledProfileContainer>
-      {openMenu ? <Menu /> : null}
+      {openMenu && <Menu />}
       <Button route='/' />
     </>
   )

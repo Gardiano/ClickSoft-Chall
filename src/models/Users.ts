@@ -10,6 +10,7 @@ export interface users {
   following?: number
   public_repos?: number
   repos_url?: string
-  data?: any
+  has_data?: any,
+  length?: any
   map?: any
 }
