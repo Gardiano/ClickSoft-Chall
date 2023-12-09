@@ -5,6 +5,8 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { FaUserCheck } from "react-icons/fa";
 import { VscGithub } from "react-icons/vsc";
+import { users } from "../../models/Users";
+import { Toast } from "../../helpers/toastContainer";
 
 import {
   StyledCard,
@@ -18,50 +20,44 @@ import {
   StyledGitHubBadge
 } from "./Card.styled";
 
-import { users } from "../../models/Users";
-import { Toast } from "../../helpers/toastContainer";
-
 // component reutilizavel
 export const Card = ({ login, name, location, avatar_url, data }: users) => {
+  
+  if (!data) {
+    return <Loader message="Procure um usuário na barra de pesquisas..." />;
+  }
+
   return (
     <>
-      {data ?
-        <>
-          <StyledCard>
-            <StyledCardContent>
-              <StyledCardImageBox>
-                <StyledGitHubBadge>
-                  <VscGithub />
-                </StyledGitHubBadge>
-                <Link to={`/users/${login}`}>
-                  <StyledCardImage src={avatar_url} />
-                </Link>
-              </StyledCardImageBox>
-              <StyledCardDetails>
-                <StyledCardUserName>
-                  <FaUserCircle />
-                  {login || 'N/A'}
-                </StyledCardUserName>
+      <StyledCard>
+        <StyledCardContent>
+          <StyledCardImageBox>
+            <StyledGitHubBadge>
+              <VscGithub />
+            </StyledGitHubBadge>
+            <Link to={`/users/${login}`}>
+              <StyledCardImage src={avatar_url} />
+            </Link>
+          </StyledCardImageBox>
+          <StyledCardDetails>
+            <StyledCardUserName>
+              <FaUserCircle />
+              {login || 'N/A'}
+            </StyledCardUserName>
 
-                <StyledCardName>
-                  <FaUserCheck />
-                  {name || 'N/A'}
-                </StyledCardName>
+            <StyledCardName>
+              <FaUserCheck />
+              {name || 'N/A'}
+            </StyledCardName>
 
-                <StyledCardLocation>
-                  <IoLocationOutline />
-                  {location || 'N/A'}
-                </StyledCardLocation>
-              </StyledCardDetails>
-            </StyledCardContent>
-          </StyledCard>
-          <Toast />
-        </>
-        :
-        <> 
-          <Loader message="Procure um usuário na barra de pesquisas..." /> 
-        </>
-      }
+            <StyledCardLocation>
+              <IoLocationOutline />
+              {location || 'N/A'}
+            </StyledCardLocation>
+          </StyledCardDetails>
+        </StyledCardContent>
+      </StyledCard>
+      <Toast />
     </>
   )
 }
